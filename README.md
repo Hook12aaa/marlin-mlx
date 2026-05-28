@@ -8,7 +8,7 @@ The interesting part is not the server. It is what I found when I opened up the 
 
 ## Why this exists
 
-After building [qwen3-mlx](../inference/) for Qwen3-4B, I wanted to know what changes when the model is multimodal and the architecture is not a pure transformer. Marlin-2B is both: it takes video frames as input, and 18 of its 24 layers are GatedDeltaNet (a recurrent SSM) rather than attention. The bandwidth profile, the dispatch patterns, and the quantisation constraints are all different from the text-only case.
+After building [qwen3-mlx](https://github.com/Hook12aaa/qwen3-mlx) for Qwen3-4B, I wanted to know what changes when the model is multimodal and the architecture is not a pure transformer. Marlin-2B is both: it takes video frames as input, and 18 of its 24 layers are GatedDeltaNet (a recurrent SSM) rather than attention. The bandwidth profile, the dispatch patterns, and the quantisation constraints are all different from the text-only case.
 
 What I did not expect was that the hardest part would not be the LLM or the optimisation. It would be the vision pipeline: getting the right frames, in the right order, with the right position encoding, so the ViT produces embeddings the LLM can actually use.
 
