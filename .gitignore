@@ -1,0 +1,33 @@
+.venv/
+build/
+__pycache__/
+*.pyc
+
+# Model (download from HuggingFace: huggingface-cli download NemoStation/Marlin-2B)
+marlin-2b-ref/
+
+# Eval data (download separately, not redistributable)
+eval/carebench/
+eval/*.npy
+eval/*.png
+eval/*.pt
+eval/python_frames_nhwc.npy
+
+# Internal dev artifacts
+.perf-optimize/
+docs/superpowers/
+.claude/
+baseline_results.json
+bench_baseline.py
+
+# Eval data downloads
+eval/carebench/
+eval/dream-1k/
+eval/*.npy
+eval/*.png
+eval/*.pt
+eval/*.json
+eval/python_frames_nhwc.npy
+
+# Corpus videos (regenerate with FFmpeg, see README)
+corpus/
